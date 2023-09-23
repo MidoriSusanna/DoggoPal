@@ -45,3 +45,29 @@ class Dog(object):
             return f"{self.name} doggo is stinky... (￣▽￣*)ゞ"
         else:
             return f"{self.name} doggo is quiet... (*＾ω＾)人(＾ω＾*)"
+    
+    def teach(self, word):
+        self.vocab.append(word)
+        self.__clock_tick()
+    
+    def talk(self):
+        print(
+            "I am a" + 
+            self.dog_breed +
+            "named" +
+            self.name +
+            "." +
+            self.description
+        )
+        self.__clock_tick()
+    
+    def feed(self):
+        print("It's delicious! Thank you (っ ᵔ◡ᵔ)っ")
+        meal = randrange(self.food, self.food_max)
+        self.food += meal
+
+        if self.food < 0:
+            self.food= 0
+            print("Please feed me more.")
+        elif self.food = self.food_max:
+            print("Thank you. I am full!")
