@@ -23,13 +23,25 @@ class Dog(object):
     def __init__(self, name, dog_breed):
         self.name = name
         self.dog_breed = dog_breed
-        self.food = randrange(self.food_max) #dog initial state of hunger 
-        self.excitement = randrange(self.excitement_max) #dog initial state of excitement
+        self.food = randrange(self.food_max)#dog initial state of hunger
+        self.excitement = randrange(self.excitement_max)#dog initial state of excitement
         self.bath = randrange(self.bath_max)
         self.vocab = self.vocab[:]
 
     def __clock_tick(self): #simulate the passage of time, food excitment and bath decrease
         self.excitement -=1
-        self.food -= 1
+        self.food -=1
         self.bath -=1
     
+    def description(self):
+        """ Dog behaviour"""
+        if self.food > self.food_warning and self.excitement > self.excitement_warning and self.bath > self.bath_warning:
+            return f"{self.name} doggo is happy! *wiggles tale* (´♡‿♡`)"
+        elif self.food < self.food_warning:
+            return f"{self.name} doggo is hungry (＞﹏＜)"
+        elif self.excitement < self.excitement_warning:
+            return f"{self.name} doggo is sad and bored... (｡T ω T｡)"
+        elif self.bath < self.bath_warning:
+            return f"{self.name} doggo is stinky... (￣▽￣*)ゞ"
+        else:
+            return f"{self.name} doggo is quiet... (*＾ω＾)人(＾ω＾*)"
