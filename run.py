@@ -47,10 +47,12 @@ class Dog(object):
             return f"{self.name} doggo is quiet... (*＾ω＾)人(＾ω＾*)"
     
     def teach(self, word):
+        """Teach a word to the dog"""
         self.vocab.append(word)
         self.__clock_tick()
     
     def talk(self):
+        """Dog introduce itself"""
         print(
             "I am a" + 
             self.dog_breed +
@@ -62,6 +64,7 @@ class Dog(object):
         self.__clock_tick()
     
     def feed(self):
+        """Feeding the dog"""
         print("It's delicious! Thank you (っ ᵔ◡ᵔ)っ")
         meal = randrange(self.food, self.food_max)
         self.food += meal
@@ -69,5 +72,33 @@ class Dog(object):
         if self.food < 0:
             self.food= 0
             print("Please feed me more.")
-        elif self.food = self.food_max:
+        elif self.food > self.food_max:
+            self.food = self.food_max
             print("Thank you. I am full!")
+        self.__clock_tick()
+    
+    def play(self):
+        """Make the dog play"""
+        print("Let's Play! Woof!")
+        fun = randrange(self.excitement, self.excitement_max)
+        self.excitement += fun
+        if self.excitement < 0:
+            self.excitement = 0
+            print("I am sad and bored...(｡T ω T｡)")
+        elif self.excitement > self.excitement_max:
+            self.excitement = self.excitement_max
+            print("I am so happy when you play with me! (´♡‿♡`)")
+        self.__clock_tick()
+    
+    def wash(self):
+        """Give the dog a bath"""
+        print("I do not like baths...")
+        shower = randrange(self.bath, self.bath_max)
+        self.bath =+ shower
+        if self.bath < 0:
+            self.bath = 0
+            print("I rolled in the mud (>ω^)")
+        elif self.bath > self.bath_max
+            self.bath = self.bath_max
+            print("Now I am fresh and clean (☆▽☆)")
+        self.__clock_tick()
