@@ -15,9 +15,9 @@ class Dog(object):
     food_reduce = 2
     food_max = 10
     food_warning = 3
-    cuddle_reduce = 3
-    cuddle_max = 10
-    cuddle_warning = 3
+    bath_reduce = 3
+    bath_max = 10
+    bath_warning = 3
     vocab = ['"Woof, Woof!"']
 
     def __init__(self, name, dog_breed):
@@ -25,4 +25,11 @@ class Dog(object):
         self.dog_breed = dog_breed
         self.food = randrange(self.food_max) #dog initial state of hunger 
         self.excitement = randrange(self.excitement_max) #dog initial state of excitement
+        self.bath = randrange(self.bath_max)
         self.vocab = self.vocab[:]
+
+    def __clock_tick(self): #simulate the passage of time, food excitment and bath decrease
+        self.excitement -=1
+        self.food -= 1
+        self.bath -=1
+    
