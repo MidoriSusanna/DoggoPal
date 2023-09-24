@@ -23,16 +23,16 @@ class Dog(object):
     def __init__(self, name, dog_breed):
         self.name = name
         self.dog_breed = dog_breed
-        self.food = randrange(self.food_max)#dog initial state of hunger
-        self.excitement = randrange(self.excitement_max)#dog initial state of excitement
+        self.food = randrange(self.food_max)  #dog initial state of hunger
+        self.excitement = randrange(self.excitement_max)  #dog initial state of excitement
         self.bath = randrange(self.bath_max)
         self.vocab = self.vocab[:]
 
-    def __clock_tick(self): #simulate the passage of time, food excitment and bath decrease
+    def __clock_tick(self):  #simulate the passage of time, food excitment and bath decrease
         self.excitement -=1
         self.food -=1
         self.bath -=1
-    
+   
 
     def description(self):
         """ Dog behaviour"""
@@ -74,7 +74,7 @@ class Dog(object):
         self.food += meal
 
         if self.food < 0:
-            self.food= 0
+            self.food = 0
             print("Please feed me more.")
         elif self.food > self.food_max:
             self.food = self.food_max
@@ -117,11 +117,41 @@ def main():
     my_dog = Dog(dog_name, chosen_breed)
 
     input(
-        "Woof! My name is" +
+        "Woof! My name is " +
         my_dog.name +
-        "and I am a/an" +
+        " and I am a/an " +
         my_dog.dog_breed + "." +
         "\n Press enter to play."
     )
 
     choice = None
+
+    while choice != 0:
+        print("\n PLAY WITH DOGGOPAL")
+        print("1 - Feed your dog")
+        print("2 - Talk with your dog")
+        print("3 - Teach your dog a command")
+        print("4 - Play with your dog")
+        print("5 - Give your dog a bath")
+        print("0 - Go to sleep \n")
+        choice = input("Choose what to do with your dog: ")
+        
+        if choice == "0":
+            print("Goodnight")
+        elif choice == "1":
+            my_dog.feed()
+        elif choice == "2":
+            my_dog.talk()
+        elif choice == "3":
+            new_command = input("What command would you like to teach your dog?")
+            my_dog.teach(new_command)
+        elif choice == "4":
+            my_dog.play()
+        elif choice == "5":
+            my_dog.bath()
+        else:
+            print("Please input a valid option.")
+
+
+main()
+    
