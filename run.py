@@ -49,28 +49,22 @@ class Dog(object):
     
 
     def teach(self, word):
-        """Teach a word to the dog"""
+        """Teach a command to the dog"""
         self.vocab.append(word)
         self.__clock_tick()
     
 
     def talk(self):
         """Dog introduce itself"""
-        print(
-            "I am a" + 
-            self.dog_breed +
-            "named" +
-            self.name +
-            "." +
-            self.description
-        )
+        print(f"I am a {self.dog_breed} named {self.name}. {self.description()}")
+        print(self.vocab[randrange(len(self.vocab))])
         self.__clock_tick()
     
 
     def feed(self):
         """Feeding the dog"""
         print("It's delicious! Thank you (っ ᵔ◡ᵔ)っ")
-        meal = randrange(self.food, self.food_max)
+        meal = randrange(0, self.food_max)
         self.food += meal
 
         if self.food < 0:
@@ -85,7 +79,7 @@ class Dog(object):
     def play(self):
         """Make the dog play"""
         print("Let's Play! Woof!")
-        fun = randrange(self.excitement, self.excitement_max)
+        fun = randrange(0, self.excitement_max)
         self.excitement += fun
         if self.excitement < 0:
             self.excitement = 0
@@ -99,8 +93,8 @@ class Dog(object):
     def wash(self):
         """Give the dog a bath"""
         print("I do not like baths...")
-        shower = randrange(self.bath, self.bath_max)
-        self.bath =+ shower
+        shower = randrange(0, self.bath_max)
+        self.bath += shower
         if self.bath < 0:
             self.bath = 0
             print("I rolled in the mud (>ω^)")
@@ -148,7 +142,7 @@ def main():
         elif choice == "4":
             my_dog.play()
         elif choice == "5":
-            my_dog.bath()
+            my_dog.wash()
         else:
             print("Please input a valid option.")
 
