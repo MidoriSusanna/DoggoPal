@@ -33,6 +33,7 @@ class Dog(object):
         self.food -=1
         self.bath -=1
     
+
     def description(self):
         """ Dog behaviour"""
         if self.food > self.food_warning and self.excitement > self.excitement_warning and self.bath > self.bath_warning:
@@ -46,11 +47,13 @@ class Dog(object):
         else:
             return f"{self.name} doggo is quiet... (*＾ω＾)人(＾ω＾*)"
     
+
     def teach(self, word):
         """Teach a word to the dog"""
         self.vocab.append(word)
         self.__clock_tick()
     
+
     def talk(self):
         """Dog introduce itself"""
         print(
@@ -63,6 +66,7 @@ class Dog(object):
         )
         self.__clock_tick()
     
+
     def feed(self):
         """Feeding the dog"""
         print("It's delicious! Thank you (っ ᵔ◡ᵔ)っ")
@@ -77,6 +81,7 @@ class Dog(object):
             print("Thank you. I am full!")
         self.__clock_tick()
     
+
     def play(self):
         """Make the dog play"""
         print("Let's Play! Woof!")
@@ -90,6 +95,7 @@ class Dog(object):
             print("I am so happy when you play with me! (´♡‿♡`)")
         self.__clock_tick()
     
+    
     def wash(self):
         """Give the dog a bath"""
         print("I do not like baths...")
@@ -98,7 +104,24 @@ class Dog(object):
         if self.bath < 0:
             self.bath = 0
             print("I rolled in the mud (>ω^)")
-        elif self.bath > self.bath_max
+        elif self.bath > self.bath_max:
             self.bath = self.bath_max
             print("Now I am fresh and clean (☆▽☆)")
         self.__clock_tick()
+
+
+def main():
+    dog_name = input("What is the name of your pet?")
+    chosen_breed = input("What breed is your dog? /Type a breed or 'mixed-breed'.")
+    #Create the dog to play with
+    my_dog = Dog(dog_name, chosen_breed)
+
+    input(
+        "Woof! My name is" +
+        my_dog.name +
+        "and I am a/an" +
+        my_dog.dog_breed + "." +
+        "\n Press enter to play."
+    )
+
+    choice = None
