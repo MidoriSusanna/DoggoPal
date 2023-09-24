@@ -49,7 +49,7 @@ class Dog(object):
     
 
     def teach(self, word):
-        """Teach a command to the dog"""
+        """Teach a word to the dog"""
         self.vocab.append(word)
         self.__clock_tick()
     
@@ -103,15 +103,26 @@ class Dog(object):
             print("Now I am fresh and clean (☆▽☆)")
         self.__clock_tick()
 
+def no_empty_string(prompt):
+    """Function to avoid empty or blank
+    strings as input"""
+    while True:
+        user_input = input(prompt)
+        if user_input.strip():  #stripping white spaces to check if the string is empty
+            return user_input
+        else:
+            print("\nThe input cannot be empty. Please enter a valid input.")
+
 
 def main():
-    dog_name = input("What is the name of your pet?")
-    chosen_breed = input("What breed is your dog? /Type a breed or 'mixed-breed'.")
+    """Main function - Start Game"""
+    dog_name = no_empty_string("What is the name of your pet?")
+    chosen_breed = no_empty_string("What breed is your dog? /Type a breed or 'mixed-breed'.")
     #Create the dog to play with
     my_dog = Dog(dog_name, chosen_breed)
 
     input(
-        "Woof! My name is " +
+        "\nWoof! My name is " +
         my_dog.name +
         " and I am a/an " +
         my_dog.dog_breed + "." +
@@ -121,6 +132,7 @@ def main():
     choice = None
 
     while choice != 0:
+        #Set game environment
         print("\n PLAY WITH DOGGOPAL")
         print("1 - Feed your dog")
         print("2 - Talk with your dog")
@@ -137,8 +149,8 @@ def main():
         elif choice == "2":
             my_dog.talk()
         elif choice == "3":
-            new_command = input("What command would you like to teach your dog?")
-            my_dog.teach(new_command)
+            new_word = input("What word would you like to teach your dog?")
+            my_dog.teach(new_word)
         elif choice == "4":
             my_dog.play()
         elif choice == "5":
