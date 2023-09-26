@@ -28,6 +28,7 @@ class Dog(object):
         self.excitement = randrange(self.excitement_max)  #dog initial state of excitement
         self.bath = randrange(self.bath_max)
         self.vocab = self.vocab[:]
+        self.commands = {}
 
     def __clock_tick(self):  #simulate the passage of time, food excitment and bath decrease
         self.excitement -=1
@@ -58,6 +59,7 @@ class Dog(object):
     def talk(self):
         """Dog introduce itself"""
         print(f"I am a {self.dog_breed} named {self.name}. {self.description()}")
+        sleep(1)
         print(self.vocab[randrange(len(self.vocab))])
         self.__clock_tick()
     
@@ -104,6 +106,21 @@ class Dog(object):
             print("Now I am fresh and clean (☆▽☆)")
         self.__clock_tick()
 
+
+    def command_learn(self):
+        """Teach the dog a command"""
+        print(f"To learn a command, {self.name} needs to practice 3 times.")
+        sleep(1)
+        print(f"Be patient. Input the command 3 times during the game to make {self.name} learn.")
+        sleep(1)
+        learn_command = no_empty_string("What command would you like to teach your dog?")
+        if learn_command in self.commands >= 3:
+            self.commands.append(learn_command)
+            print(f"I have learnt the command: '{learn_command}'! Thank you!")
+        else:
+            print(f"I am trying to learn the command: '{learn_command}'... Please keep teaching me.")
+                  
+
 def no_empty_string(prompt):
     """Function to avoid empty or blank
     strings as input"""
@@ -117,7 +134,7 @@ def no_empty_string(prompt):
 
 def main():
     """Main function - Start Game"""
-    print("Hi! This is DoggoPal, your virtual best friend.\n")
+    print("Hi! This is DoggoPal, your virtual best friend. U・ᴥ・U\n")
     sleep(1)
     print("Answer the following questions to play with me and be my friend for today.\n")
     sleep(2)
@@ -141,24 +158,31 @@ def main():
         print("\n PLAY WITH DOGGOPAL")
         print("1 - Feed your dog")
         print("2 - Talk with your dog")
-        print("3 - Teach your dog a command")
+        print("3 - Teach your dog a word")
         print("4 - Play with your dog")
         print("5 - Give your dog a bath")
         print("0 - Go to sleep \n")
         choice = input("Choose what to do with your dog: ")
       
         if choice == "0":
-            print("Goodnight")
+            sleep(2)
+            print("Goodnight, hopefully I will see you tomorrow.")
+            break
         elif choice == "1":
+            sleep(2)
             my_dog.feed()
         elif choice == "2":
+            sleep(2)
             my_dog.talk()
         elif choice == "3":
-            new_word = input("What word would you like to teach your dog?")
+            sleep(2)
+            new_word = no_empty_string("What word would you like to teach your dog?")
             my_dog.teach(new_word)
         elif choice == "4":
+            sleep(2)
             my_dog.play()
         elif choice == "5":
+            sleep(2)
             my_dog.wash()
         else:
             print("Please input a valid option.")
