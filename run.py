@@ -28,7 +28,7 @@ class Dog(object):
         self.excitement = randrange(self.excitement_max)  #dog initial state of excitement
         self.bath = randrange(self.bath_max)
         self.vocab = self.vocab[:]
-        self.commands = {}
+        self.commands = []
 
     def __clock_tick(self):  #simulate the passage of time, food excitment and bath decrease
         self.excitement -=1
@@ -114,11 +114,17 @@ class Dog(object):
         print(f"Be patient. Input the command 3 times during the game to make {self.name} learn.")
         sleep(1)
         learn_command = no_empty_string("What command would you like to teach your dog?")
-        if learn_command in self.commands >= 3:
-            self.commands.append(learn_command)
-            print(f"I have learnt the command: '{learn_command}'! Thank you!")
+        if learn_command in self.commands:
+            if self.commands[learn_command] >= 3:
+                self.commands.append(learn_command)
+                print(f"I have learnt the command: '{learn_command}'! Thank you!")
+            else:
+                self.commands[learn_command] += 1
+                print(f"I am trying to learn the command: '{learn_command}'... Please keep teaching me.")
         else:
+            self.commands.append(learn_command)
             print(f"I am trying to learn the command: '{learn_command}'... Please keep teaching me.")
+        self.__clock_tick()
                   
 
 def no_empty_string(prompt):
@@ -161,6 +167,7 @@ def main():
         print("3 - Teach your dog a word")
         print("4 - Play with your dog")
         print("5 - Give your dog a bath")
+        print("6 - Teach your dog a command")
         print("0 - Go to sleep \n")
         choice = input("Choose what to do with your dog: ")
       
@@ -184,6 +191,9 @@ def main():
         elif choice == "5":
             sleep(2)
             my_dog.wash()
+        elif choice == "6":
+            sleep(2)
+            my_dog.command_learn()
         else:
             print("Please input a valid option.")
 
