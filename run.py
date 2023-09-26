@@ -113,7 +113,7 @@ class Dog(object):
         sleep(1)
         print(f"Be patient. Input the command 3 times during the game to make {self.name} learn.")
         sleep(1)
-        learn_command = no_empty_string("What command would you like to teach your dog?")
+        learn_command = no_empty_string("What command would you like to teach your dog?\n")
         if learn_command in self.commands:
             if self.commands[learn_command] >= 3:
                 self.commands.append(learn_command)
@@ -144,8 +144,8 @@ def main():
     sleep(1)
     print("Answer the following questions to play with me and be my friend for today.\n")
     sleep(2)
-    dog_name = no_empty_string("What is the name of your pet?")
-    chosen_breed = no_empty_string("What breed is your dog? /Type a breed or 'mixed-breed'.")
+    dog_name = no_empty_string("What is the name of your pet?\n")
+    chosen_breed = no_empty_string("What breed is your dog? /Type a breed or 'mixed-breed'.\n")
     #Create the dog to play with
     my_dog = Dog(dog_name, chosen_breed)
 
@@ -183,7 +183,7 @@ def main():
             my_dog.talk()
         elif choice == "3":
             sleep(2)
-            new_word = no_empty_string("What word would you like to teach your dog?")
+            new_word = no_empty_string("What word would you like to teach your dog?\n")
             my_dog.teach(new_word)
         elif choice == "4":
             sleep(2)
