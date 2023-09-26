@@ -3,6 +3,7 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 from random import randrange
+from time import sleep
 
 #Dog pet class
 class Dog(object):
@@ -116,6 +117,10 @@ def no_empty_string(prompt):
 
 def main():
     """Main function - Start Game"""
+    print("Hi! This is DoggoPal, your virtual best friend.\n")
+    sleep(1)
+    print("Answer the following questions to play with me and be my friend for today.\n")
+    sleep(2)
     dog_name = no_empty_string("What is the name of your pet?")
     chosen_breed = no_empty_string("What breed is your dog? /Type a breed or 'mixed-breed'.")
     #Create the dog to play with
@@ -141,7 +146,7 @@ def main():
         print("5 - Give your dog a bath")
         print("0 - Go to sleep \n")
         choice = input("Choose what to do with your dog: ")
-        
+      
         if choice == "0":
             print("Goodnight")
         elif choice == "1":
@@ -160,4 +165,3 @@ def main():
 
 
 main()
-    
