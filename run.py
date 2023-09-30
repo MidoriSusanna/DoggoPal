@@ -129,7 +129,18 @@ class Dog(object):
             self.commands[learn_command] = 1
             slow_typing(f"I am trying to learn the command: '{learn_command}'... Please keep teaching me.")
         self.__clock_tick()
-                  
+
+
+def go_walk(dog_age):
+    """Go for a walk with your dog 
+    according to its age"""
+    if dog_age == "A":
+        slow_typing("Please bring me out for a walk. I want to run, play, explore!")
+    elif dog_age == "B":
+        slow_typing("Let's go to the park and meet dog friends!")
+    else:
+        slow_typing("I feel tired. Let's rest together on the couch.")                  
+
 
 def no_empty_string(prompt):
     """Function to avoid empty or blank
@@ -158,8 +169,9 @@ def main():
     sleep(1)
     slow_typing("Answer the following questions to play with me and be my friend for today.\n")
     sleep(2)
-    dog_name = no_empty_string("What is the name of your pet?\n")
+    dog_name = no_empty_string("What is the name of your dog?\n")
     chosen_breed = no_empty_string("What breed is your dog? /Type a breed or 'mixed-breed'.\n")
+    dog_age = no_empty_string("Is your dog: A - a puppy, B - a young dog, C - an older dog?")
     #Create the dog to play with
     my_dog = Dog(dog_name, chosen_breed)
 
@@ -182,6 +194,7 @@ def main():
         print("4 - Play with your dog")
         print("5 - Give your dog a bath")
         print("6 - Teach your dog a command")
+        print("7 - Go for a walk")
         print("0 - Go to sleep \n")
         choice = input("Choose what to do with your dog: ")
       
@@ -208,6 +221,9 @@ def main():
         elif choice == "6":
             sleep(2)
             my_dog.command_learn()
+        elif choice == "7":
+            sleep(2)
+            go_walk(dog_age)
         else:
             print("Please input a valid option.")
 
