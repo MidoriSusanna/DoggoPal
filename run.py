@@ -20,20 +20,25 @@ class Dog(object):
     def __init__(self, name, dog_breed):
         self.name = name
         self.dog_breed = dog_breed
-        self.food = randrange(self.food_max)  #dog initial state of hunger
-        self.excitement = randrange(self.excitement_max)  #dog initial state of excitement
+        # dog initial state of hunger
+        self.food = randrange(self.food_max)
+        # dog initial state of excitement
+        self.excitement = randrange(self.excitement_max)
+        # dog initial state of being clean
         self.bath = randrange(self.bath_max)
         self.vocab = self.vocab[:]
-        self.commands = []
+        self.commands = {}
 
-    def __clock_tick(self):  #simulate the passage of time, food excitment and bath decrease
+    def __clock_tick(self):
+        """Simulate the passage of time, 
+        food excitment and bath decrease"""
         self.excitement -=1
         self.food -=1
         self.bath -=1
    
 
     def description(self):
-        """ Dog behaviour"""
+        """Dog behaviour"""
         if self.food > self.food_warning and self.excitement > self.excitement_warning and self.bath > self.bath_warning:
             return f"{self.name} doggo is happy! *wiggles tale* (´♡‿♡`)"
         elif self.food < self.food_warning:
@@ -53,7 +58,7 @@ class Dog(object):
     
 
     def talk(self):
-        """Dog introduce itself"""
+        """Dog introduces itself"""
         print(f"I am a {self.dog_breed} named {self.name}. {self.description()}")
         sleep(1)
         print(self.vocab[randrange(len(self.vocab))])
@@ -112,13 +117,12 @@ class Dog(object):
         learn_command = no_empty_string("What command would you like to teach your dog?\n")
         if learn_command in self.commands:
             if self.commands[learn_command] >= 3:
-                self.commands.append(learn_command)
                 print(f"I have learnt the command: '{learn_command}'! Thank you!")
             else:
                 self.commands[learn_command] += 1
                 print(f"I am trying to learn the command: '{learn_command}'... Please keep teaching me.")
         else:
-            self.commands.append(learn_command)
+            self.commands[learn_command] = 1
             print(f"I am trying to learn the command: '{learn_command}'... Please keep teaching me.")
         self.__clock_tick()
                   
@@ -128,7 +132,8 @@ def no_empty_string(prompt):
     strings as input"""
     while True:
         user_input = input(prompt)
-        if user_input.strip():  #stripping white spaces to check if the string is empty
+        # stripping white spaces to check if the string is empty
+        if user_input.strip():
             return user_input
         else:
             print("\nThe input cannot be empty. Please enter a valid input.")
