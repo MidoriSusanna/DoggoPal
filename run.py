@@ -19,9 +19,10 @@ class Dog(object):
     bath_warning = 3
     vocab = ["Woof, Woof!"]
 
-    def __init__(self, name, dog_breed):
+    def __init__(self, name, dog_breed, dog_age):
         self.name = name
         self.dog_breed = dog_breed
+        self.dog_age = dog_age
         # dog initial state of hunger
         self.food = randrange(self.food_max)
         # dog initial state of excitement
@@ -131,15 +132,16 @@ class Dog(object):
         self.__clock_tick()
 
 
-def go_walk(dog_age):
-    """Go for a walk with your dog 
-    according to its age"""
-    if dog_age == "A":
-        slow_typing("Please bring me out for a walk. I want to run, play, explore!")
-    elif dog_age == "B":
-        slow_typing("Let's go to the park and meet dog friends!")
-    else:
-        slow_typing("I feel tired. Let's rest together on the couch.")                  
+    def go_walk(self):
+        """Go for a walk with your dog 
+        according to its age"""
+        if self.dog_age == "A":
+            slow_typing("Please bring me out for a walk. I want to run, play, explore!")
+        elif self.dog_age == "B":
+            slow_typing("Let's go to the park and meet dog friends!")
+        else:
+            slow_typing("I feel tired. Let's rest together on the couch.")
+        self.__clock_tick()                  
 
 
 def no_empty_string(prompt):
@@ -184,7 +186,7 @@ def main():
     chosen_breed = no_empty_string("What breed is your dog? /Type a breed or 'mixed-breed'.\n")
     dog_age = dog_age_input("Is your dog: A - a puppy, B - a young dog, C - an older dog?")
     #Create the dog to play with
-    my_dog = Dog(dog_name, chosen_breed)
+    my_dog = Dog(dog_name, chosen_breed, dog_age)
 
     input(
         "\nWoof! My name is " +
@@ -198,6 +200,7 @@ def main():
 
     while choice != 0:
         #Set game environment
+        sleep(3)
         print("\n PLAY WITH DOGGOPAL")
         print("1 - Feed your dog")
         print("2 - Talk with your dog")
@@ -234,7 +237,7 @@ def main():
             my_dog.command_learn()
         elif choice == "7":
             sleep(2)
-            go_walk(dog_age)
+            my_dog.go_walk()
         else:
             print("Please input a valid option.")
 
