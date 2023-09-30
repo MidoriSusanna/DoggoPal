@@ -116,10 +116,12 @@ class Dog(object):
         sleep(1)
         learn_command = no_empty_string("What command would you like to teach your dog?\n")
         if learn_command in self.commands:
+            self.commands[learn_command] += 1
+
             if self.commands[learn_command] >= 3:
                 print(f"I have learnt the command: '{learn_command}'! Thank you!")
+                self.commands[learn_command] = 3
             else:
-                self.commands[learn_command] += 1
                 print(f"I am trying to learn the command: '{learn_command}'... Please keep teaching me.")
         else:
             self.commands[learn_command] = 1
