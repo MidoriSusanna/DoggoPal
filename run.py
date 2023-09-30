@@ -154,6 +154,17 @@ def no_empty_string(prompt):
             print("\nThe input cannot be empty. Please enter a valid input.")
 
 
+def dog_age_input(prompt):
+    """Validate dog age by giving
+     only three options to choose between"""
+    while True:
+        user_input = input(prompt).strip().upper()
+        if user_input in ('A', 'B', 'C'):
+            return user_input
+        else:
+            print("Please input a valid option. Enter 'A', 'B' or 'C'.")
+
+
 def slow_typing(text, delay=0.03):
     """Function to make a typing effect"""
     for ltr in text:
@@ -171,7 +182,7 @@ def main():
     sleep(2)
     dog_name = no_empty_string("What is the name of your dog?\n")
     chosen_breed = no_empty_string("What breed is your dog? /Type a breed or 'mixed-breed'.\n")
-    dog_age = no_empty_string("Is your dog: A - a puppy, B - a young dog, C - an older dog?")
+    dog_age = dog_age_input("Is your dog: A - a puppy, B - a young dog, C - an older dog?")
     #Create the dog to play with
     my_dog = Dog(dog_name, chosen_breed)
 
