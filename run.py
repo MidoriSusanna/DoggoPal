@@ -1,7 +1,3 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
 from random import randrange
 from time import sleep
 
@@ -19,7 +15,7 @@ class Dog(object):
     bath_reduce = 3
     bath_max = 10
     bath_warning = 3
-    vocab = ['"Woof, Woof!"']
+    vocab = ["Woof, Woof!"]
 
     def __init__(self, name, dog_breed):
         self.name = name
