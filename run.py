@@ -1,5 +1,7 @@
 from random import randrange
 from time import sleep
+import sys
+import time
 
 #Dog pet class
 class Dog(object):
@@ -59,73 +61,73 @@ class Dog(object):
 
     def talk(self):
         """Dog introduces itself"""
-        print(f"I am a {self.dog_breed} named {self.name}. {self.description()}")
+        slow_typing(f"I am a {self.dog_breed} named {self.name}. {self.description()}")
         sleep(1)
-        print(self.vocab[randrange(len(self.vocab))])
+        slow_typing(self.vocab[randrange(len(self.vocab))])
         self.__clock_tick()
     
 
     def feed(self):
         """Feeding the dog"""
-        print("It's delicious! Thank you (っ ᵔ◡ᵔ)っ")
+        slow_typing("It's delicious! Thank you (っ ᵔ◡ᵔ)っ")
         meal = randrange(0, self.food_max)
         self.food += meal
 
         if self.food < 0:
             self.food = 0
-            print("Please feed me more.")
+            slow_typing("Please feed me more.")
         elif self.food > self.food_max:
             self.food = self.food_max
-            print("Thank you. I am full!")
+            slow_typing("Thank you. I am full!")
         self.__clock_tick()
     
 
     def play(self):
         """Make the dog play"""
-        print("Let's Play! Woof!")
+        slow_typing("Let's Play! Woof!")
         fun = randrange(0, self.excitement_max)
         self.excitement += fun
         if self.excitement < 0:
             self.excitement = 0
-            print("I am sad and bored...(｡T ω T｡)")
+            slow_typing("I am sad and bored...(｡T ω T｡)")
         elif self.excitement > self.excitement_max:
             self.excitement = self.excitement_max
-            print("I am so happy when you play with me! (´♡‿♡`)")
+            slow_typing("I am so happy when you play with me! (´♡‿♡`)")
         self.__clock_tick()
     
     
     def wash(self):
         """Give the dog a bath"""
-        print("I do not like baths...")
+        slow_typing("I do not like baths...")
         shower = randrange(0, self.bath_max)
         self.bath += shower
         if self.bath < 0:
             self.bath = 0
-            print("I rolled in the mud (>ω^)")
+            slow_typing("I rolled in the mud (>ω^)")
         elif self.bath > self.bath_max:
             self.bath = self.bath_max
-            print("Now I am fresh and clean (☆▽☆)")
+            slow_typing("Now I am fresh and clean (☆▽☆)")
         self.__clock_tick()
 
 
     def command_learn(self):
         """Teach the dog a command"""
-        print(f"To learn a command, {self.name} needs to practice 3 times.")
+        slow_typing(f"To learn a command, {self.name} needs to practice 3 times.")
         sleep(1)
-        print(f"Be patient. Input the command 3 times during the game to make {self.name} learn.")
+        slow_typing(f"Be patient. Input the command 3 times during the game to make {self.name} learn.")
         sleep(1)
-        learn_command = no_empty_string("What command would you like to teach your dog?\n")
+        learn_command = no_empty_string("What command would you like to teach your dog?\n").lower()
         if learn_command in self.commands:
             self.commands[learn_command] += 1
 
             if self.commands[learn_command] >= 3:
-                print(f"I have learnt the command: '{learn_command}'! Thank you!")
+                slow_typing(f"I have learnt the command: '{learn_command}'! Thank you!")
                 self.commands[learn_command] = 3
             else:
-                print(f"I am trying to learn the command: '{learn_command}'... Please keep teaching me.")
+                slow_typing(f"I am trying to learn the command: '{learn_command}'... Please keep teaching me.")
         else:
             self.commands[learn_command] = 1
-            print(f"I am trying to learn the command: '{learn_command}'... Please keep teaching me.")
+            slow_typing(f"I am trying to learn the command: '{learn_command}'... Please keep teaching me.")
         self.__clock_tick()
                   
 
@@ -141,11 +143,20 @@ def no_empty_string(prompt):
             print("\nThe input cannot be empty. Please enter a valid input.")
 
 
+def slow_typing(text, delay=0.03):
+    """Function to make a typing effect"""
+    for ltr in text:
+        sys.stdout.write(ltr)
+        sys.stdout.flush()
+        time.sleep(delay)
+    print() 
+
+
 def main():
     """Main function - Start Game"""
-    print("Hi! This is DoggoPal, your virtual best friend. U・ᴥ・U\n")
+    slow_typing("Hi! This is DoggoPal, your virtual best friend. U・ᴥ・U\n")
     sleep(1)
-    print("Answer the following questions to play with me and be my friend for today.\n")
+    slow_typing("Answer the following questions to play with me and be my friend for today.\n")
     sleep(2)
     dog_name = no_empty_string("What is the name of your pet?\n")
     chosen_breed = no_empty_string("What breed is your dog? /Type a breed or 'mixed-breed'.\n")
@@ -176,7 +187,7 @@ def main():
       
         if choice == "0":
             sleep(2)
-            print("Goodnight, hopefully I will see you tomorrow.")
+            slow_typing("Goodnight, hopefully I will see you tomorrow.")
             break
         elif choice == "1":
             sleep(2)
