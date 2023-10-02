@@ -21,6 +21,7 @@ class Dog(object):
     vocab = ["Woof, Woof!"]
 
     def __init__(self, name, dog_breed, dog_age):
+        # Initialize the dog with a name, breed, and age
         self.name = name
         self.dog_breed = dog_breed
         self.dog_age = dog_age
@@ -34,14 +35,15 @@ class Dog(object):
         self.commands = {}
 
     def __clock_tick(self):
-        """Simulate the passage of time,
-        food excitment and bath decrease"""
+        """Simulate the passage of time:
+        food, excitment and bath decrement (attributes)"""
         self.excitement -= 1
         self.food -= 1
         self.bath -= 1
 
     def description(self):
-        """Dog behaviour"""
+        """Describe the dog's behavior
+        based on its state"""
         if (self.food > self.food_warning and
             self.excitement > self.excitement_warning and
             self.bath > self.bath_warning):
@@ -56,12 +58,14 @@ class Dog(object):
             return f"{self.name} doggo is quiet... (*＾ω＾)人(＾ω＾*)"
 
     def teach(self, word):
-        """Teach a word to the dog"""
+        """Teach a word to the dog and decrement
+        food, excitement and bath"""
         self.vocab.append(word)
         self.__clock_tick()
 
     def talk(self):
-        """Dog introduces itself"""
+        """Dog introduces itself
+        and decrement attributes"""
         slow_typing(f"I am a {self.dog_breed}"
                     f"named {self.name}. {self.description()}")
         sleep(1)
@@ -69,7 +73,9 @@ class Dog(object):
         self.__clock_tick()    
 
     def feed(self):
-        """Feeding the dog"""
+        """Feed the dog, the function
+        updates the food level and decrement
+        attributes"""
         slow_typing("It's delicious! Thank you (っ ᵔ◡ᵔ)っ")
         meal = randrange(0, self.food_max)
         self.food += meal
@@ -83,7 +89,9 @@ class Dog(object):
         self.__clock_tick()
 
     def play(self):
-        """Make the dog play"""
+        """Make the dog play, the function
+        updates the excitement level and decrement
+        attributes"""
         slow_typing("Let's Play! Woof!")
         fun = randrange(0, self.excitement_max)
         self.excitement += fun
@@ -96,7 +104,9 @@ class Dog(object):
         self.__clock_tick()
 
     def wash(self):
-        """Give the dog a bath"""
+        """Give the dog a bath, the function
+        updates the being clean level and decrement
+        attributes"""
         slow_typing("I do not like baths...")
         shower = randrange(0, self.bath_max)
         self.bath += shower
@@ -109,7 +119,9 @@ class Dog(object):
         self.__clock_tick()
 
     def command_learn(self):
-        """Teach the dog a command"""
+        """Teach the dog a command,
+        update the command count, and decrement
+        attributes"""
         slow_typing(f"To learn a command,"
                     f"{self.name} needs to practice 3 times.")
         sleep(1)
@@ -139,7 +151,8 @@ class Dog(object):
 
     def go_walk(self):
         """Go for a walk with your dog
-        according to its age"""
+        according to its age, decrement
+        attributes"""
         if self.dog_age == "A":
             slow_typing("Please bring me out for a walk."
                         "I want to run, play, explore!")
