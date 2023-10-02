@@ -3,7 +3,8 @@ from time import sleep
 import sys
 import time
 
-#Dog pet class
+
+# Dog pet class
 class Dog(object):
     """
     A virtual dog to play with and look after
@@ -33,16 +34,17 @@ class Dog(object):
         self.commands = {}
 
     def __clock_tick(self):
-        """Simulate the passage of time, 
+        """Simulate the passage of time,
         food excitment and bath decrease"""
-        self.excitement -=1
-        self.food -=1
-        self.bath -=1
-   
+        self.excitement -= 1
+        self.food -= 1
+        self.bath -= 1
 
     def description(self):
         """Dog behaviour"""
-        if self.food > self.food_warning and self.excitement > self.excitement_warning and self.bath > self.bath_warning:
+        if (self.food > self.food_warning and
+            self.excitement > self.excitement_warning and
+            self.bath > self.bath_warning):
             return f"{self.name} doggo is happy! *wiggles tale* (´♡‿♡`)"
         elif self.food < self.food_warning:
             return f"{self.name} doggo is hungry (＞﹏＜)"
@@ -52,21 +54,19 @@ class Dog(object):
             return f"{self.name} doggo is stinky... (￣▽￣*)ゞ"
         else:
             return f"{self.name} doggo is quiet... (*＾ω＾)人(＾ω＾*)"
-    
 
     def teach(self, word):
         """Teach a word to the dog"""
         self.vocab.append(word)
         self.__clock_tick()
-    
 
     def talk(self):
         """Dog introduces itself"""
-        slow_typing(f"I am a {self.dog_breed} named {self.name}. {self.description()}")
+        slow_typing(f"I am a {self.dog_breed}"
+                    f"named {self.name}. {self.description()}")
         sleep(1)
         slow_typing(self.vocab[randrange(len(self.vocab))])
-        self.__clock_tick()
-    
+        self.__clock_tick()    
 
     def feed(self):
         """Feeding the dog"""
@@ -81,7 +81,6 @@ class Dog(object):
             self.food = self.food_max
             slow_typing("Thank you. I am full!")
         self.__clock_tick()
-    
 
     def play(self):
         """Make the dog play"""
@@ -95,8 +94,7 @@ class Dog(object):
             self.excitement = self.excitement_max
             slow_typing("I am so happy when you play with me! (´♡‿♡`)")
         self.__clock_tick()
-    
-    
+
     def wash(self):
         """Give the dog a bath"""
         slow_typing("I do not like baths...")
@@ -110,38 +108,46 @@ class Dog(object):
             slow_typing("Now I am fresh and clean (☆▽☆)")
         self.__clock_tick()
 
-
     def command_learn(self):
         """Teach the dog a command"""
-        slow_typing(f"To learn a command, {self.name} needs to practice 3 times.")
+        slow_typing(f"To learn a command,"
+                    f"{self.name} needs to practice 3 times.")
         sleep(1)
-        slow_typing(f"Be patient. Input the command 3 times during the game to make {self.name} learn.")
+        slow_typing(f"Be patient. Input the command 3"
+                    f"times during the game to make {self.name} learn.")
         sleep(1)
-        learn_command = no_empty_string("What command would you like to teach your dog?\n").lower()
+        learn_command = no_empty_string("What command would"
+                                        "you like to teach"
+                                        "your dog?\n").lower()
         if learn_command in self.commands:
             self.commands[learn_command] += 1
 
             if self.commands[learn_command] >= 3:
-                slow_typing(f"I have learnt the command: '{learn_command}'! Thank you!")
+                slow_typing(f"I have learnt the command:"
+                            f"'{learn_command}'! Thank you!")
                 self.commands[learn_command] = 3
             else:
-                slow_typing(f"I am trying to learn the command: '{learn_command}'... Please keep teaching me.")
+                slow_typing(f"I am trying to learn"
+                            f"the command: '{learn_command}'..."
+                            f"Please keep teaching me.")
         else:
             self.commands[learn_command] = 1
-            slow_typing(f"I am trying to learn the command: '{learn_command}'... Please keep teaching me.")
+            slow_typing(f"I am trying to learn"
+                        f"the command: '{learn_command}'..."
+                        "Please keep teaching me.")
         self.__clock_tick()
 
-
     def go_walk(self):
-        """Go for a walk with your dog 
+        """Go for a walk with your dog
         according to its age"""
         if self.dog_age == "A":
-            slow_typing("Please bring me out for a walk. I want to run, play, explore!")
+            slow_typing("Please bring me out for a walk."
+                        "I want to run, play, explore!")
         elif self.dog_age == "B":
             slow_typing("Let's go to the park and meet dog friends!")
         else:
             slow_typing("I feel tired. Let's rest together on the couch.")
-        self.__clock_tick()                  
+        self.__clock_tick()          
 
 
 def no_empty_string(prompt):
@@ -173,19 +179,21 @@ def slow_typing(text, delay=0.03):
         sys.stdout.write(ltr)
         sys.stdout.flush()
         time.sleep(delay)
-    print() 
+    print()
 
 
 def main():
     """Main function - Start Game"""
     slow_typing("Hi! This is DoggoPal, your virtual best friend. U・ᴥ・U\n")
     sleep(1)
-    slow_typing("Answer the following questions to play with me and be my friend for today.\n")
+    slow_typing("Answer the following questions to play with me"
+                "and be my friend for today.\n")
     sleep(2)
     dog_name = no_empty_string("What is the name of your dog?\n")
-    chosen_breed = no_empty_string("What breed is your dog? /Type a breed or 'mixed-breed'.\n")
-    dog_age = dog_age_input("Is your dog: A - a puppy, B - a young dog, C - an older dog?")
-    #Create the dog to play with
+    chosen_breed = no_empty_string("What breed is your dog?\n")
+    dog_age = dog_age_input("Is your dog: A - a puppy,"
+                            "B - a young dog, C - an older dog?")
+    # Create the dog to play with
     my_dog = Dog(dog_name, chosen_breed, dog_age)
 
     input(
@@ -199,7 +207,7 @@ def main():
     choice = None
 
     while choice != 0:
-        #Set game environment
+        # Set game environment
         sleep(3)
         print("\n PLAY WITH DOGGOPAL")
         print("1 - Feed your dog")
@@ -211,7 +219,7 @@ def main():
         print("7 - Go for a walk")
         print("0 - Go to sleep \n")
         choice = input("Choose what to do with your dog: ")
-      
+
         if choice == "0":
             sleep(2)
             slow_typing("Goodnight, hopefully I will see you tomorrow.")
@@ -224,7 +232,8 @@ def main():
             my_dog.talk()
         elif choice == "3":
             sleep(2)
-            new_word = no_empty_string("What word would you like to teach your dog?\n")
+            new_word = no_empty_string("What word would you like"
+                                       "to teach your dog?\n")
             my_dog.teach(new_word)
         elif choice == "4":
             sleep(2)
