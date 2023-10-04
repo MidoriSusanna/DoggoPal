@@ -1,31 +1,61 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1>DoggoPal - Your Virtual Best Friend<h1>
+<p>"DoggoPal: Your Virtual Best Friend" is an application inspired by the timeless Japanese Tamagotchi and the more sophisticated Nintendogs. DoggoPal offers users the joy of caring for their very own virtual pet, complete with simple yet engaging activities like playtime, bath time, and mealtime.<br>
+Simplicity is an essential feature of DoggoPal, making it accessible to a wide range of
+users, including the youngest children. This game's target audience is not
+specific, catering to all age groups and even welcoming the youngest of players.<br>
+<image src="./assets/images/readme-screen.png"><br>
 
-Welcome USER_NAME,
+<h1>Project Goals<h1>
+-	Create a simple and intuitive application that could be also accessible to younger children. <br>
+-	Create a friendly and relaxed atmosphere through an interface that visually expresses the presence of a virtual pet using backgrounds and emojis.<br>
+-	Make the user able to choose name, breed, and age of the virtual dog through open questions which cannot have a blank answer.<br>
+-	Create a straightforward interface where users can select actions for their virtual dog through numerical choices.<br>
+-	Changing the dog's state (excitement, hunger, cleanliness) with the passage of time.<br>
+-	Make the user able to teach the dog new words and commands.<br>
+-	Create a dynamic in which the user must respond to the dog's inputs/statements to change its state.<br>
+-	Have the possibility to exit or restart the game with another pet. <br>
+-	Display the instructions in a slow manner (typing) to create a narrative effect.<br>
+-	Keep the instructions and commands to access the game as simple and clear as possible.<br>
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+<h1>User Stories<h1>
 
-## Reminders
+<h1>Design<h1>
+<p>The project relies on a pre-built terminal, limiting the design aspect.<br> Nonetheless, I aimed to enhance user engagement with a welcoming background featuring cute puppies. The central placement of the terminal adds visual balance to the page. 
+To create a more welcoming atmosphere and remember the Japanese origins of this game genre (like the Tamagotchi and Nintendogs), Japanese emojis were incorporated into the text displayed in the terminal.<br><p>
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+<h1>Flowchart<h1>
 
-## Creating the Heroku app
+<h1>Features<h1>
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+<h1>Technologies used<h1>
+Phyton: the application is entirely written in Phyton. <br>
+HTML and CSS: HTML and CSS were used to style the layout of the page. <br>
+Javascript: it was used by Code Institute to set up the terminal. <br>
+Github: it was used to store the repository of the project (pushed from VSCode). <br>
+VSCode: it was used for the coding process and to push the code to github. <br>
+Heroku: it was used for deployment of the application. <br>
+Git: version control. <br>
 
-1. `heroku/python`
-2. `heroku/nodejs`
+<h1>Modules imported<h1>
+from random import randrange <br>
+from time import sleep <br>
+import sys <br>
+import time <br>
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+<h1>Bugs and Errors <h1>
+The project follows the PEP8 style guidelines and passes the CI Phyton Linter https://pep8ci.herokuapp.com with no errors or warnings. <br>
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+<h1>Deployment<h1>
 
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+<h1>Credits<h1>
+The initial part of the game was made through this game building video:
+https://www.youtube.com/watch?v=7m6O9zqZFZ8 <br>
+Empty and blank string in Phyton: https://www.scaler.com/topics/check-if-string-empty-python/#method3 <br>
+About the sleep function: https://www.freecodecamp.org/news/the-python-sleep-function-how-to-make-python-wait-a-few-seconds-before-continuing-with-example-commands/#:~:text=You%20can%20use%20Python%27s%20sleep,pauses%20between%20words%20or%20graphics. <br>
+Slow typing: https://stackoverflow.com/questions/4099422/printing-slowly-simulate-typing <br>
+Text by me and corrected (English mistakes, vocabulary) with DeepL and ChatGPT. <br>
+Pictures from open source website: https://unsplash.com <br>
+Japanese Emoji: http://kaomoji.ru/en/#hugging <br>
+Font: https://fonts.google.com <br>
+A big thank you to the Student Support of Code Institute and my facilitator who have been extremely helpful. <br>
+A big thank you also to the Slack Community and particularly my brilliant classmates and their advice. <br>
