@@ -127,11 +127,11 @@ class Dog(object):
                     f"{self.name} needs to practice 3 times.")
         sleep(1)
         slow_typing(f"Be patient. Input the command 3"
-                    f"times during the game to make {self.name} learn.")
+                    f" times during the game to make {self.name} learn.")
         sleep(1)
         learn_command = no_empty_string("What command would"
-                                        "you like to teach"
-                                        "your dog?\n").lower()
+                                        " you like to teach"
+                                        " your dog?\n").lower()
         if learn_command in self.commands:
             self.commands[learn_command] += 1
 
@@ -157,7 +157,7 @@ class Dog(object):
         according to the age group"""
         if self.dog_age == "A":
             slow_typing("Please bring me out for a walk."
-                        "I want to run, play, explore!")
+                        " I want to run, play, explore!")
             sleep(0.5)
             slow_typing("Walking")
             sleep(1)
@@ -167,7 +167,7 @@ class Dog(object):
             sleep(1)
             slow_typing(".")
             slow_typing("Thank you for walking me."
-                        "Please make me play.")
+                        " Please make me play.")
         elif self.dog_age == "B":
             pet_types = choice(["cat", "dog", "parrot", "mouse", "fox"])
             friend_names = choice(["Sally", "Frankie", "Max", "Leo", "Lola"])
@@ -181,7 +181,7 @@ class Dog(object):
             sleep(1)
             slow_typing(".")
             slow_typing(f"Woof! There is my {pet_types} friend"
-                        f"{friend_names}! Let's play together!")
+                        f" {friend_names}! Let's play together!")
         else:
             food_names = choice(["chicken", "peanut butter", "dog treats",
                                 "cheese", "the thing you have in your hands",
@@ -196,21 +196,21 @@ class Dog(object):
             sleep(1)
             slow_typing(".")
             slow_typing("Thank you. Now I feel snacky. Can you feed me"
-                        f"with {food_names}?")
+                        f" with {food_names}?")
             sleep(2)
             user_food_choice = three_choice_input("Would you like to feed"
-                                                  "your dog with it?"
-                                                  "Type A - yes, B - no," 
-                                                  "C - 'I'd rather feed it"
-                                                  "something else")
+                                                  " your dog with it?"
+                                                  " Type A - yes, B - no," 
+                                                  " C - 'I'd rather feed it"
+                                                  " something else")
             if user_food_choice == "A":
                 slow_typing("Crunch crunch... Tasty!")
             elif user_food_choice == "B":
                 slow_typing("Doggo is sad... but maybe you did it for"
-                            "my health.")
+                            " my health.")
             else:
                 chosen_food = no_empty_string("What would you like to feed"
-                                              "your dog with?")
+                                              " your dog with?")
                 food_names.append(chosen_food)
 
                 
@@ -254,12 +254,12 @@ def main():
     slow_typing("Hi! This is DoggoPal, your virtual best friend. U・ᴥ・U\n")
     sleep(1)
     slow_typing("Answer the following questions to play with me"
-                "and be my friend for today.\n")
+                " and be my friend for today.\n")
     sleep(2)
     dog_name = no_empty_string("What is the name of your dog?\n")
     chosen_breed = no_empty_string("What breed is your dog?\n")
     dog_age = three_choice_input("Is your dog: A - a puppy,"
-                            "B - a young dog, C - an older dog?")
+                            " B - a young dog, C - an older dog?")
     # Create the dog to play with
     my_dog = Dog(dog_name, chosen_breed, dog_age)
 
@@ -300,7 +300,7 @@ def main():
         elif select == "3":
             sleep(2)
             new_word = no_empty_string("What word would you like"
-                                       "to teach your dog?\n")
+                                       " to teach your dog?\n")
             my_dog.teach(new_word)
         elif select == "4":
             sleep(2)
