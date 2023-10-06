@@ -293,6 +293,8 @@ def main():
                                           "A - Exit the game, B - Continue the "
                                           "game, C - Restart the game?")
             if end_game == "A":
+                slow_typing("Goodnight. I hope I will see you tomorrow "
+                            "to play together again")
                 break
             elif end_game == "B":
                 continue
