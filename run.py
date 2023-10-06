@@ -289,8 +289,15 @@ def main():
 
         if select == "0":
             sleep(2)
-            slow_typing("Goodnight, hopefully I will see you tomorrow.")
-            break
+            end_game = three_choice_input("What would you like to do? "
+                                          "A - Exit the game, B - Continue the "
+                                          "game, C - Restart the game?")
+            if end_game == "A":
+                break
+            elif end_game == "B":
+                continue
+            else:
+                return main()
         elif select == "1":
             sleep(2)
             my_dog.feed()
