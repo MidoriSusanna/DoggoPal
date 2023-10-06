@@ -59,6 +59,7 @@ https://www.youtube.com/watch?v=7m6O9zqZFZ8 <br>
 Empty and blank string in Phyton: https://www.scaler.com/topics/check-if-string-empty-python/#method3 <br>
 About the sleep function: https://www.freecodecamp.org/news/the-python-sleep-function-how-to-make-python-wait-a-few-seconds-before-continuing-with-example-commands/#:~:text=You%20can%20use%20Python%27s%20sleep,pauses%20between%20words%20or%20graphics. <br>
 Slow typing: https://stackoverflow.com/questions/4099422/printing-slowly-simulate-typing <br>
+How to use Randome choice() method: https://www.w3schools.com/python/ref_random_choice.asp <br> 
 Text by me and corrected (English mistakes, vocabulary) with DeepL and ChatGPT. <br>
 Pictures from open source website: https://unsplash.com <br>
 Japanese Emoji: http://kaomoji.ru/en/#hugging <br>

@@ -211,9 +211,9 @@ class Dog(object):
             else:
                 chosen_food = no_empty_string("What would you like to feed"
                                               " your dog with?")
-                food_names.append(chosen_food)
-
-                
+                slow_typing("Thank you for feeding me with this new "
+                            f"{chosen_food}. It smells good.")
+              
         self.__clock_tick()       
 
 
