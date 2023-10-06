@@ -1,4 +1,5 @@
 from random import randrange
+from random import choice
 from time import sleep
 import sys
 import time
@@ -156,8 +157,30 @@ class Dog(object):
         if self.dog_age == "A":
             slow_typing("Please bring me out for a walk."
                         "I want to run, play, explore!")
+            sleep(0.5)
+            slow_typing("Walking")
+            sleep(1)
+            slow_typing(".")
+            sleep(1)
+            slow_typing(".")
+            sleep(1)
+            slow_typing(".")
+            slow_typing("Thank you for walking me."
+                        "Please make me play.")
         elif self.dog_age == "B":
+            pet_types = choice(["cat", "dog", "parrot", "mouse", "fox"])
+            friend_names = choice(["Sally", "Frankie", "Max", "Leo", "Lola"])
             slow_typing("Let's go to the park and meet dog friends!")
+            sleep(0.5)
+            slow_typing("Walking")
+            sleep(1)
+            slow_typing(".")
+            sleep(1)
+            slow_typing(".")
+            sleep(1)
+            slow_typing(".")
+            slow_typing(f"Woof! There is my {pet_types} friend"
+                        f"{friend_names}! Let's play together!")
         else:
             slow_typing("I feel tired. Let's rest together on the couch.")
         self.__clock_tick()          
@@ -217,9 +240,9 @@ def main():
         "\n Press enter to play."
     )
 
-    choice = None
+    select = None
 
-    while choice != 0:
+    while select != 0:
         # Set game environment
         sleep(3)
         print("\n PLAY WITH DOGGOPAL")
@@ -231,33 +254,33 @@ def main():
         print("6 - Teach your dog a command")
         print("7 - Go for a walk")
         print("0 - Go to sleep \n")
-        choice = input("Choose what to do with your dog: ")
+        select = input("Choose what to do with your dog: ")
 
-        if choice == "0":
+        if select == "0":
             sleep(2)
             slow_typing("Goodnight, hopefully I will see you tomorrow.")
             break
-        elif choice == "1":
+        elif select == "1":
             sleep(2)
             my_dog.feed()
-        elif choice == "2":
+        elif select == "2":
             sleep(2)
             my_dog.talk()
-        elif choice == "3":
+        elif select == "3":
             sleep(2)
             new_word = no_empty_string("What word would you like"
                                        "to teach your dog?\n")
             my_dog.teach(new_word)
-        elif choice == "4":
+        elif select == "4":
             sleep(2)
             my_dog.play()
-        elif choice == "5":
+        elif select == "5":
             sleep(2)
             my_dog.wash()
-        elif choice == "6":
+        elif select == "6":
             sleep(2)
             my_dog.command_learn()
-        elif choice == "7":
+        elif select == "7":
             sleep(2)
             my_dog.go_walk()
         else:
