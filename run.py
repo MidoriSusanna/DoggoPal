@@ -153,7 +153,8 @@ class Dog(object):
     def go_walk(self):
         """Go for a walk with your dog
         according to its age, decrement
-        attributes"""
+        attributes. Display different scenarios
+        according to the age group"""
         if self.dog_age == "A":
             slow_typing("Please bring me out for a walk."
                         "I want to run, play, explore!")
@@ -182,8 +183,38 @@ class Dog(object):
             slow_typing(f"Woof! There is my {pet_types} friend"
                         f"{friend_names}! Let's play together!")
         else:
+            food_names = choice(["chicken", "peanut butter", "dog treats",
+                                "cheese", "the thing you have in your hands",
+                                "those socks", "pasta"])
             slow_typing("I feel tired. Let's rest together on the couch.")
-        self.__clock_tick()          
+            sleep(0.5)
+            slow_typing("Snuggle, snuggle")
+            sleep(1)
+            slow_typing(".")
+            sleep(1)
+            slow_typing(".")
+            sleep(1)
+            slow_typing(".")
+            slow_typing("Thank you. Now I feel snacky. Can you feed me"
+                        f"with {food_names}?")
+            sleep(2)
+            user_food_choice = three_choice_input("Would you like to feed"
+                                                  "your dog with it?"
+                                                  "Type A - yes, B - no," 
+                                                  "C - 'I'd rather feed it"
+                                                  "something else")
+            if user_food_choice == "A":
+                slow_typing("Crunch crunch... Tasty!")
+            elif user_food_choice == "B":
+                slow_typing("Doggo is sad... but maybe you did it for"
+                            "my health.")
+            else:
+                chosen_food = no_empty_string("What would you like to feed"
+                                              "your dog with?")
+                food_names.append(chosen_food)
+
+                
+        self.__clock_tick()       
 
 
 def no_empty_string(prompt):
@@ -198,9 +229,9 @@ def no_empty_string(prompt):
             print("\nThe input cannot be empty. Please enter a valid input.")
 
 
-def dog_age_input(prompt):
-    """Validate dog age by giving
-     only three options to choose between"""
+def three_choice_input(prompt):
+    """Validate dog age and food choice by 
+    giving only three options to choose between"""
     while True:
         user_input = input(prompt).strip().upper()
         if user_input in ('A', 'B', 'C'):
@@ -227,7 +258,7 @@ def main():
     sleep(2)
     dog_name = no_empty_string("What is the name of your dog?\n")
     chosen_breed = no_empty_string("What breed is your dog?\n")
-    dog_age = dog_age_input("Is your dog: A - a puppy,"
+    dog_age = three_choice_input("Is your dog: A - a puppy,"
                             "B - a young dog, C - an older dog?")
     # Create the dog to play with
     my_dog = Dog(dog_name, chosen_breed, dog_age)
@@ -237,7 +268,7 @@ def main():
         my_dog.name +
         " and I am a/an " +
         my_dog.dog_breed + "." +
-        "\n Press enter to play."
+        "\nPress enter to play."
     )
 
     select = None
