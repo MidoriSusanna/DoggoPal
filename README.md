@@ -22,7 +22,7 @@ specific, catering to all age groups and even welcoming the youngest of players.
 
 <h1>Design</h1>
 <p>The project relies on a pre-built terminal, limiting the design aspect.<br> Nonetheless, I aimed to enhance user engagement with a welcoming background featuring cute puppies. The central placement of the terminal adds visual balance to the page. 
-To create a more welcoming atmosphere and remember the Japanese origins of this game genre (like the Tamagotchi and Nintendogs), Japanese emojis were incorporated into the text displayed in the terminal.<br></p>
+To create a more welcoming atmosphere and remember the Japanese origins of this game genre (like the Tamagotchi and Nintendogs), Japanese emojis were incorporated into the text displayed in the terminal. ASCII art has also being added to create a welcoming atmosphere and remind us of retro games.<br></p>
 
 <h1>Flowchart</h1>
 
@@ -63,6 +63,8 @@ How to use Randome choice() method: https://www.w3schools.com/python/ref_random_
 Text by me and corrected (English mistakes, vocabulary) with DeepL and ChatGPT. <br>
 Pictures from open source website: https://unsplash.com <br>
 Japanese Emoji: http://kaomoji.ru/en/#hugging <br>
+ASCII art: https://fsymbols.com/text-art/ <br>
+https://www.asciiart.eu/text-to-ascii-art <br>
 Font: https://fonts.google.com <br>
 A big thank you to the Student Support of Code Institute and my facilitator who have been extremely helpful. <br>
 A big thank you also to the Slack Community and particularly my brilliant classmates and their advice. </p><br>

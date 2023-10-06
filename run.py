@@ -68,7 +68,7 @@ class Dog(object):
         """Dog introduces itself
         and decrement attributes"""
         slow_typing(f"I am a {self.dog_breed}"
-                    f"named {self.name}. {self.description()}")
+                    f" named {self.name}. {self.description()}")
         sleep(1)
         slow_typing(self.vocab[randrange(len(self.vocab))])
         self.__clock_tick()    
@@ -123,7 +123,7 @@ class Dog(object):
         """Teach the dog a command,
         update the command count, and decrement
         attributes"""
-        slow_typing(f"To learn a command,"
+        slow_typing(f"To learn a command, "
                     f"{self.name} needs to practice 3 times.")
         sleep(1)
         slow_typing(f"Be patient. Input the command 3"
@@ -255,6 +255,11 @@ def main():
     sleep(1)
     slow_typing("Answer the following questions to play with me"
                 " and be my friend for today.\n")
+    print("───▄▀▀▀▄▄▄▄▄▄▄▀▀▀▄───")
+    print("───█▒▒░░░░░░░░░▒▒█───")
+    print("────█░░█░░░░░█░░█────")
+    print("─▄▄──█░░░▀█▀░░░█──▄▄─")
+    print("█░░█─▀▄░░░░░░░▄▀─█░░█ \n")
     sleep(2)
     dog_name = no_empty_string("What is the name of your dog?\n")
     chosen_breed = no_empty_string("What breed is your dog?\n")
@@ -275,7 +280,7 @@ def main():
 
     while select != 0:
         # Set game environment
-        sleep(3)
+        sleep(2)
         print("\n PLAY WITH DOGGOPAL")
         print("1 - Feed your dog")
         print("2 - Talk with your dog")
@@ -294,7 +299,7 @@ def main():
                                           "game, C - Restart the game?")
             if end_game == "A":
                 slow_typing("Goodnight. I hope I will see you tomorrow "
-                            "to play together again")
+                            "to play together again!")
                 break
             elif end_game == "B":
                 continue
