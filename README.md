@@ -54,10 +54,17 @@ import time </p><br>
 
 <h1>Bugs and Errors </h1>
 - Background not showing when the app is deployed: <br>
-I fixed this bug moving the CSS styiling inside the index.html file (between style tags) instead of having a separated stylesheet. The background pictures cannot be saved only locally, but needs to be stored online. Trying to save a picture for the backroung of the terminal in an asset folder will result in an error (file not found).
+<br>
+I fixed this bug moving the CSS styiling inside the index.html file (between style tags) instead of having a separated stylesheet. The background pictures cannot be saved only locally, but needs to be stored online. Trying to save a picture for the backroung of the terminal in an asset folder will result in an error (file not found).<br>
+<br>
 - The dog learns the command after the 3rd time it is repeated, but the command was actually learnt after the 4th time: <br>
+<br>
 The 3rd time the command was input by the user, the function was not increasing the integer before checking the count. By fixing this issue the bug was also fixed. <br>
-
+<br>
+- The dog needs to learn a command even if the command is written in a different way (e.g. "sit" and "Sit"): <br><br>
+To eliminate case sensitivity I added the .lower() method to the input. 
+<br>
+<br>
 <p>The project follows the PEP8 style guidelines and passes the CI Phyton Linter https://pep8ci.herokuapp.com with no errors or warnings.</p><br>
 
 <h1>Deployment</h1>
