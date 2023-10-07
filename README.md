@@ -47,10 +47,20 @@ Heroku: it was used for deployment of the application. <br>
 Git: version control through VSCode.</p><br>
 
 <h1>Modules imported</h1>
-<p>from random import randrange <br>
-from time import sleep <br>
-import sys <br>
-import time </p><br>
+<p>- randrange: <br>
+This function is imported from the random module. <br>
+It is used to generate a random integer within a specified range. In my project it is used to initialize and manipulate attributes of the Dog class (food, excitement, and bath).<br>
+- choice: <br>
+This function is imported from the random module. <br>
+It is used to select a random element from a list. In my project it is used to make random choices (selecting a random pet type or friend name during the walk).<br>
+- sleep: <br>
+Imported from the time module. <br>
+It introduces a delay (in seconds) in the execution of a programme. In my project it is used to create pauses in the game to give the appearance of the dog performing actions over time and to slow down the narration to give the user to follow the game easily.<br>
+- sys: <br>
+Sys is used to manipulate a standard output, allowing to create a typing effect by printing characters one at a time. This again is to slow down the narration to give the user to follow the game easily. <br>
+- time: <br>
+The entire time module was imported. <br>
+It provides various time-related functions. In my project it is used in conjunction with sleep to control the typing effect.<br></p><br>
 
 <h1>Bugs and Errors </h1>
 - Background not showing when the app is deployed: <br>
@@ -102,6 +112,7 @@ Empty and blank string in Phyton: https://www.scaler.com/topics/check-if-string-
 About the sleep function: https://www.freecodecamp.org/news/the-python-sleep-function-how-to-make-python-wait-a-few-seconds-before-continuing-with-example-commands/#:~:text=You%20can%20use%20Python%27s%20sleep,pauses%20between%20words%20or%20graphics. <br>
 Slow typing: https://stackoverflow.com/questions/4099422/printing-slowly-simulate-typing <br>
 How to use Randome choice() method: https://www.w3schools.com/python/ref_random_choice.asp <br> 
+Website used to create the flowchart: https://lucid.app <br>
 Text by me and corrected (English mistakes, vocabulary) with DeepL and ChatGPT. <br>
 Pictures from open source website: https://unsplash.com <br>
 Japanese Emoji: http://kaomoji.ru/en/#hugging <br>

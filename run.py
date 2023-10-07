@@ -202,7 +202,7 @@ class Dog(object):
                                                   " your dog with it?"
                                                   " Type A - yes, B - no," 
                                                   " C - 'I'd rather feed it"
-                                                  " something else")
+                                                  " something else\n")
             if user_food_choice == "A":
                 slow_typing("Crunch crunch... Tasty!")
             elif user_food_choice == "B":
@@ -210,7 +210,7 @@ class Dog(object):
                             " my health.")
             else:
                 chosen_food = no_empty_string("What would you like to feed"
-                                              " your dog with?")
+                                              " your dog with?\n")
                 slow_typing("Thank you for feeding me with this new "
                             f"{chosen_food}. It smells good.")
               
@@ -264,7 +264,7 @@ def main():
     dog_name = no_empty_string("What is the name of your dog?\n")
     chosen_breed = no_empty_string("What breed is your dog?\n")
     dog_age = three_choice_input("Is your dog: A - a puppy,"
-                            " B - a young dog, C - an older dog?")
+                                 " B - a young dog, C - an older dog?\n")
     # Create the dog to play with
     my_dog = Dog(dog_name, chosen_breed, dog_age)
 
@@ -296,7 +296,7 @@ def main():
             sleep(2)
             end_game = three_choice_input("What would you like to do? "
                                           "A - Exit the game, B - Continue the "
-                                          "game, C - Restart the game?")
+                                          "game, C - Restart the game?\n")
             if end_game == "A":
                 slow_typing("Goodnight. I hope I will see you tomorrow "
                             "to play together again!")
