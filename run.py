@@ -137,16 +137,16 @@ class Dog(object):
 
             if self.commands[learn_command] >= 3:
                 slow_typing(f"I have learnt the command:"
-                            f"'{learn_command}'! Thank you!")
+                            f"' {learn_command}'! Thank you!")
                 self.commands[learn_command] = 3
             else:
                 slow_typing(f"I am trying to learn"
-                            f"the command: '{learn_command}'..."
-                            f"Please keep teaching me.")
+                            f" the command: '{learn_command}'..."
+                            f" Please keep teaching me.")
         else:
             self.commands[learn_command] = 1
             slow_typing(f"I am trying to learn"
-                        f"the command: '{learn_command}'..."
+                        f" the command: '{learn_command}'..."
                         "Please keep teaching me.")
         self.__clock_tick()
 

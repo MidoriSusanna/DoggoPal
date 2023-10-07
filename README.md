@@ -19,6 +19,14 @@ specific, catering to all age groups and even welcoming the youngest of players.
 -	Keep the instructions and commands to access the game as simple and clear as possible.<br></p>
 
 <h1>User Stories</h1>
+- As a user I can personalize the virtual pet with name, breed and age group, so that I can have a customised game experience. <br>
+- As a user I can access a simple menu of actions (defined by numbers), so that I can simply navigate the game and choose the game development. <br>
+- As a user I need to understand the pet feedback, so that I can respond with an appropriate action. <br>
+- As a user, I want to be able to feed, play and clean the dog. <br>
+- As a user, I want to be able to teach my dog a word or a command. <br>
+- As a user, I want to be able to go for a walk with the pet dog. <br>
+- As a user, I want to be able to exit or restart the game whenever I wish. <br>
+
 
 <h1>Design</h1>
 <p>The project relies on a pre-built terminal, limiting the design aspect.<br> Nonetheless, I aimed to enhance user engagement with a welcoming background featuring cute puppies. The central placement of the terminal adds visual balance to the page. 
@@ -35,7 +43,7 @@ Javascript: it was used by Code Institute to set up the terminal. <br>
 Github: it was used to store the repository of the project (pushed from VSCode). <br>
 VSCode: it was used for the coding process and to push the code to github. <br>
 Heroku: it was used for deployment of the application. <br>
-Git: version control.</p><br>
+Git: version control through VSCode.</p><br>
 
 <h1>Modules imported</h1>
 <p>from random import randrange <br>
