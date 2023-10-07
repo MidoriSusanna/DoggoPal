@@ -53,14 +53,40 @@ import sys <br>
 import time </p><br>
 
 <h1>Bugs and Errors </h1>
-| **Bug** | **Fix** |
-| --- | --- |
-| Background not showing when the app is deployed | I fixed this bug moving the CSS styiling inside the index.html file (between style tags) instead of having a separated stylesheet. The background pictures cannot be saved only locally, but needs to be stored online. Trying to save a picture for the backroung of the terminal in an asset folder will result in an error (file not found).|
-| The dog learns the command after the 3rd time it is repeated, but the command was actually learnt after the 4th time.| The 3rd time the command was input by the user, the function was not increasing the integer before checking the count. By fixing this issue the bug was also fixed.|
+- Background not showing when the app is deployed: <br>
+I fixed this bug moving the CSS styiling inside the index.html file (between style tags) instead of having a separated stylesheet. The background pictures cannot be saved only locally, but needs to be stored online. Trying to save a picture for the backroung of the terminal in an asset folder will result in an error (file not found).
+- The dog learns the command after the 3rd time it is repeated, but the command was actually learnt after the 4th time: <br>
+The 3rd time the command was input by the user, the function was not increasing the integer before checking the count. By fixing this issue the bug was also fixed. <br>
 
 <p>The project follows the PEP8 style guidelines and passes the CI Phyton Linter https://pep8ci.herokuapp.com with no errors or warnings.</p><br>
 
 <h1>Deployment</h1>
+<h2>Version Control</h2>
+<p>The website was created in VSCode and pushed to github to the repository "DoggoPal". <br>
+- git add: preliminary step before committing new elements. <br>
+- git commit -m "": commit changes to the repository.<br>
+- git push: push the committed code to the GitHub repository. <br></p>
+<h2>Deploy to Heroku</h2>
+<p>The project was deployed to the cloud platform Heroku<br></p>
+<p>Deployment steps:<br>
+- In order for the project to run on Heroku, we  need Heroku to install the dependencies we used in the project. The list of dependencies will go in our requirements.txt file here. To create our list of requirements, we  use the following command in the terminal 'Pip3 freeze > requirements.txt'. In my project the requirements.txt file is empty because no dependencies were installed. This in the beginning was giving issue with the deployment (bug explained at the end of the section). Commit and push the changes to githhub.<br>
+- Set up an Heroku account<br>
+- On the dashboard, click "Create new app"<br>
+- Name the App with a unique name ans select your region (EU/USA) and click "create app"<br>
+-  It's important to get the settings section done before you deploying the code, click the settings tab on the top-left.<br>
+-  Config Var section: if applicable (not the case of this project) add elements from .gitignore. To add as an additional config var: the key is PORT and the value is 8000. If you do not add this, thedeployment may fail. Click "Add".<br>
+- Add buildpacks to the application: install more dependencies. Click "Add buildpack" and add Python, select that and then click “Save changes”. The second buildpack is called node.js, select that and click “Save”. Make sure the two buildpacks are in this order (phyton and then node.js).<br>
+- Select Deployment method: Github <br>
+- Confirm connceting with Github <br>
+- Search the repository name to connect with Github (in this case "DoggoPal"). Click "Search" and "Connect".
+- Enable automatic deploy: this way Heroku will rebuild the app every time a new change is pushed to Github.<br>
+- It is also possible to use the manual deploy. Using the manual deploy is very useful if we want to see immediatly new elements we have just pushed to Github.<br>
+- The site should show “App was successfully deployed” message and a button to view the deployed app. <br>
+<br>
+Deployment issue: during the first manual deployment of the app I experienced an issue related to the dependencies and the file requirements.txt. This was the issue displayed:
+<image src="./assets/images/deployment-issue.png"><br>
+VSCode is a local programme that is not already contained within a virtual environment (unlike Gitpod and Codeanywhere). Taking this into account, if we run the command pip3 freeze > requirements.txt, VSCode will install all packages on local (even what is not needed for the project). The issue could be solved by removing the added dependencies (since for this project I was not working with any) or set up a virtual environment for VSCode.<br>
+</p>
 
 <h1>Credits</h1>
 <p>The initial part of the game was made through this game building video:
