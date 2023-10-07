@@ -33,6 +33,7 @@ specific, catering to all age groups and even welcoming the youngest of players.
 To create a more welcoming atmosphere and remember the Japanese origins of this game genre (like the Tamagotchi and Nintendogs), Japanese emojis were incorporated into the text displayed in the terminal. ASCII art has also being added to create a welcoming atmosphere and remind us of retro games.<br></p>
 
 <h1>Flowchart</h1>
+<image src="./assets/images/flowchart.png"><br>
 
 <h1>Features</h1>
 
