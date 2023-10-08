@@ -132,7 +132,7 @@ By restarting, the main function is returned and the game restart from the intro
 <h2>Time Related Functions and Slow Typing</h2>
 <p>To slow down the narration and create a typing effect, different time related functions have been implemented. <br>
 - The function sleep() is used to create pauses in the game to give the appearance of the dog performing actions over time and to slow down the narration to give the user to follow the game easily. <br>
-- The slow_typing function is implemented to create a typing effect which enhance the user experience and makes the game easier to follow.
+- The slow_typing function is implemented to create a typing effect which enhance the user experience and makes the game easier to follow. <br>
 - The __clock_tick function is essential to the game. It is called in the game after every other function to simulate the passage of time and make the levels of hunger, excitement and cleaningness of the dog decrease after every action. Every action requires an amount of energy, this changes the pet attributes through the game. </p><br> 
 
 <h2>Case sensitivity</h2>
@@ -164,7 +164,7 @@ The entire time module was imported. <br>
 It provides various time-related functions. In my project it is used in conjunction with sleep to control the typing effect.<br></p><br>
 
 <h1>Bugs and Errors </h1>
-- Background not showing when the app is deployed: <br>
+<p>- Background not showing when the app is deployed: <br>
 <br>
 I fixed this bug moving the CSS styiling inside the index.html file (between style tags) instead of having a separated stylesheet. The background pictures cannot be saved only locally, but needs to be stored online. Trying to save a picture for the backroung of the terminal in an asset folder will result in an error (file not found).<br>
 <br>
@@ -176,6 +176,8 @@ The 3rd time the command was input by the user, the function was not increasing 
 To eliminate case sensitivity I added the .lower() method to the input. 
 <br>
 <br>
+- In the while loop, the element "choice" was creating issues with the function choice:<br><br>
+I have replaced the element "choice" of the loop with the word "select" to avoid further issues. </p><br><br>
 <p>The project follows the PEP8 style guidelines and passes the CI Phyton Linter https://pep8ci.herokuapp.com with no errors or warnings.</p><br>
 <image src="./assets/images/phyton-linter.png"><br>
 
