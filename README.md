@@ -76,6 +76,7 @@ To eliminate case sensitivity I added the .lower() method to the input.
 <br>
 <br>
 <p>The project follows the PEP8 style guidelines and passes the CI Phyton Linter https://pep8ci.herokuapp.com with no errors or warnings.</p><br>
+<image src="./assets/images/phyton-linter.png"><br>
 
 <h1>Deployment</h1>
 <h2>Version Control</h2>

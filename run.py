@@ -47,7 +47,7 @@ class Dog(object):
         based on its state"""
         if (self.food > self.food_warning and
             self.excitement > self.excitement_warning and
-            self.bath > self.bath_warning):
+                self.bath > self.bath_warning):
             return f"{self.name} doggo is happy! *wiggles tale* (´♡‿♡`)"
         elif self.food < self.food_warning:
             return f"{self.name} doggo is hungry (＞﹏＜)"
@@ -71,7 +71,7 @@ class Dog(object):
                     f" named {self.name}. {self.description()}")
         sleep(1)
         slow_typing(self.vocab[randrange(len(self.vocab))])
-        self.__clock_tick()    
+        self.__clock_tick()
 
     def feed(self):
         """Feed the dog, the function
@@ -185,7 +185,7 @@ class Dog(object):
         else:
             food_names = choice(["chicken", "peanut butter", "dog treats",
                                 "cheese", "the thing you have in your hands",
-                                "those socks", "pasta"])
+                                 "those socks", "pasta"])
             slow_typing("I feel tired. Let's rest together on the couch.")
             sleep(0.5)
             slow_typing("Snuggle, snuggle")
@@ -200,7 +200,7 @@ class Dog(object):
             sleep(2)
             user_food_choice = three_choice_input("Would you like to feed"
                                                   " your dog with it?"
-                                                  " Type A - yes, B - no," 
+                                                  " Type A - yes, B - no,"
                                                   " C - 'I'd rather feed it"
                                                   " something else\n")
             if user_food_choice == "A":
@@ -213,8 +213,7 @@ class Dog(object):
                                               " your dog with?\n")
                 slow_typing("Thank you for feeding me with this new "
                             f"{chosen_food}. It smells good.")
-              
-        self.__clock_tick()       
+        self.__clock_tick()
 
 
 def no_empty_string(prompt):
@@ -230,7 +229,7 @@ def no_empty_string(prompt):
 
 
 def three_choice_input(prompt):
-    """Validate dog age and food choice by 
+    """Validate dog age and food choice by
     giving only three options to choose between"""
     while True:
         user_input = input(prompt).strip().upper()
@@ -295,8 +294,9 @@ def main():
         if select == "0":
             sleep(2)
             end_game = three_choice_input("What would you like to do? "
-                                          "A - Exit the game, B - Continue the "
-                                          "game, C - Restart the game?\n")
+                                          "A - Exit the game, "
+                                          "B - Continue the game,"
+                                          " C - Restart the game?\n")
             if end_game == "A":
                 slow_typing("Goodnight. I hope I will see you tomorrow "
                             "to play together again!")
