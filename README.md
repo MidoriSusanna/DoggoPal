@@ -41,16 +41,16 @@ To create a more welcoming atmosphere and remember the Japanese origins of this 
 <image src="./assets/images/welcome-screen1.png"><br>
 
 <h2>Name, breed, age</h2>
-<p>Three questions are displayed to create an instance of the Dog class. At the beginning the user can customise their game experience by assigning the dog a name, breed and age group they prefer. The questions about name and breed are open questions, the user can type what he wishes. There is a validation system that prevent the user from leaving the string empty or blank. The question about the age group is a three-option question, this has also a validation system that doesn't allow the user to answer something different from A,B or C. <br>
+<p>Three questions are displayed to create an instance of the Dog class. At the beginning the user can customise their game experience by assigning the dog a name, breed and age group they prefer. The questions about name and breed are open questions, the users can type what they wish. There is a validation system that prevent the user from leaving the string empty or blank. The question about the age group is a three-option question, this has also a validation system that doesn't allow the user to answer something different from A,B or C. <br>
 The question about the breed is deliberately left without validation as to the breed type of the dog, in order to leave as much freedom as possible to the user. An alternative would have been to compare the answer against a predefined list of breeds (eliminating case sensitivity), but this could have created unnecessary and meaningless issues with the user's answer (considering the many breeds and mixed breeds).<br>
 The chosen age group will affect directly the go_walk function with different scenarios.<br> 
-After answering the questions, the dog introduces itself, this will give the user a feedback about their name and breed choices. <br>
+After answering the questions the dog introduces itself, this will give the user a feedback about their name and breed choices. <br>
 Through the randrange function, the dog is assigned random levels of hunger, excitement and cleanliness. <br>
 By clicking enter, the game starts.</p><br>
 <image src="./assets/images/name-breed-age2.png"><br>
 
 <h2>Main Menu</h2>
-<p>The main menu has very intuitive and essential features: it is possible to choose to do with the virtual pet by clicking an option from 0 to 7. This menu reappears in loop everytime the user select a number and the scenario is displayed. The menu also has a validation system in case the user choose something different than 0-7.</p><br>
+<p>The main menu has very intuitive and essential features: it is possible to choose what to do with the virtual pet by clicking an option from 0 to 7. This menu reappears in loop everytime the user select a number and the scenario is displayed. The menu also has a validation system in case the user choose something different than 0-7.</p><br>
 <image src="./assets/images/main-menu3.png"><br>
 
 <h2>Food Feature</h2>
@@ -76,10 +76,10 @@ In this case the user should be pushed to play with the dog (option 4). <br>
 <image src="./assets/images/talk3.png"><br>
 In this other case the user should be encouraged to give the dog a bath (option 5).<br>
 <image src="./assets/images/talk4.png"><br>
-This is - for example - the feedback given by the virtual pet once the the user understand the pet need and decides to give the dog a bath. </p><br>
+This is - for example - the feedback given by the virtual pet once the the user understands the pet needs and decides to give the dog a bath. </p><br>
 
 <h2>Teach a word</h2>
-<p>By clicking 3, the user can teach a word to the dog. This word will be added to the list of words the do knows and will display in a random way when the command "talk with the dog" is chosen. The question has a validation method and the string cannot be blank or empty. </p><br>
+<p>By clicking 3, the user can teach a word to the dog. This word will be added to the list of words the dog knows and will display in a random way when the command "talk with the dog" is chosen. The question has a validation method and the string cannot be blank or empty. </p><br>
 <image src="./assets/images/teach.png"><br>
 
 <h2>Play Feature</h2>
@@ -89,7 +89,7 @@ This is - for example - the feedback given by the virtual pet once the the user 
 <image src="./assets/images/play.png"><br>
 
 <h2>Bath Feature</h2>
-<p>By clicking 5, the user can give the virtual pet a bath. The response would generally be "I do not like baths". Depending also by the random level of cleaningness of the dog, other feedback could be provided:<br>
+<p>By clicking 5, the user can give the virtual pet a bath. The response would generally be "I do not like baths". Depending also on the random level of cleaningness of the dog, other feedback could be provided:<br>
 "I rolled in the mud (>ω^)"<br>
 "Now I am fresh and clean (☆▽☆)"</p><br>
 <image src="./assets/images/bath.png"><br>
@@ -101,16 +101,16 @@ For the first two times the same word is input, the game will display "I am tryi
 <image src="./assets/images/command2.png"><br>
 
 <h2>Go for a Walk</h2>
-<p>By clicking 7, the user can bring the virtual pet for a walk. This function is directly dependent on the chosen group age. Difference group ages will have difference responses to the invite for a walk from the user. <br>
+<p>By clicking 7, the user can bring the virtual pet for a walk. This function is directly dependent on the chosen group age. Different group ages will have different responses to the invite for a walk from the user. <br>
 If the virtual dog is a puppy, the response is:<br>
 <image src="./assets/images/walk-puppy.png"><br>
 If the virtual dog is a young dog, the response is: <br>
 <image src="./assets/images/walk-young-dog.png"><br>
-In this case, the young dog meets on its way a friend. The type of animal and name of the friends are chosen through the "choice" function that selects a random element from a prepared list. The young dog could meet different type of animals (dog, cat, parrot...) with different names. <br>
+In this case, the young dog meets a friend on its way. The type of animal and name of the friends are chosen through the "choice" function that selects a random element from a prepared list. The young dog could meet different type of animals (dog, cat, parrot...) with different names. <br>
 If the virtual dog is an older dog, the response is: 
 <image src="./assets/images/walk-older-dog.png"><br>
 In this case, the dog appears to be tired. The preference is for staying at home cuddling with the owner. The dog also looks for a snack, and through the function choice it asks if it could be feeded with a random food from a list. The user can then decide with a three-option question if giving the requested food, not giving it or feeding the pet with something else. Both the three-option question and the open question have validation methods. <br>
-In all cases, the walking or relaxing is simulated by slowing the time and adding some dots to the narration. </p><br>
+In all cases, the walking and relaxing are simulated by slowing the time and adding some dots to the narration. </p><br>
 
 <h2>Exit the game</h2>
 <p>By clicking 0, the user can decide to exit the game, continue the game or restart the game from the beginning. This is a three-option question with a validation method. <br>
@@ -124,19 +124,19 @@ By restarting, the main function is returned and the game restart from the intro
 </p>Through the game different validation methods are implemented. <br>
 - For the open questions, the "no_empty_string" function is used. This function provides a feedback to the user if the input is either blank or empty. The strip() method is used to check if the string is composed only by white spaces. If the string is empty or blank, a message is diplayed to the terminal "The input cannot be empty. Please enter a valid input.". <br>
 - For the three-option questions (A,B,C), the three_choice_input is implemented. Answers could only be A, B or C (case sensitivity is eliminated by using the .upper() method), otherwise a message is displayed to the user "Please input a valid option. Enter 'A', 'B' or 'C'". <br>
-- In the main menu, the validation is guaranteed by the if else statment, where "else" is paired with "Please input a valid option". </p><br>
+- In the main menu, the validation is guaranteed by the if-else statment, where "else" is paired with "Please input a valid option". </p><br>
 <image src="./assets/images/empty-input.png"><br>
 <image src="./assets/images/3-options-validation.png"><br>
 <image src="./assets/images/validation-menu.png"><br>
 
 <h2>Time Related Functions and Slow Typing</h2>
 <p>To slow down the narration and create a typing effect, different time related functions have been implemented. <br>
-- The function sleep() is used to create pauses in the game to give the appearance of the dog performing actions over time and to slow down the narration to give the user to follow the game easily. <br>
+- The function sleep() is used to create pauses in the game to give the appearance of the dog performing actions over time and to slow down the narration to allow the user to follow the game easily. <br>
 - The slow_typing function is implemented to create a typing effect which enhance the user experience and makes the game easier to follow. <br>
-- The __clock_tick function is essential to the game. It is called in the game after every other function to simulate the passage of time and make the levels of hunger, excitement and cleaningness of the dog decrease after every action. Every action requires an amount of energy, this changes the pet attributes through the game. </p><br> 
+- The __clock_tick function is essential to the game. It is called in the game after every other function to simulate the passage of time and make the levels of hunger, excitement and cleaningness of the dog decrease after every action. Every action requires an amount of energy, this changes the pet attributes throughout the game. </p><br> 
 
 <h2>Case sensitivity</h2>
-<p>Where the user is required to provide an input, case sensitivity has been eliminated by using the .upper() or .lower() method.</p><br>
+<p>Where the user is required to provide an input, case sensitivity has been eliminated by using the .upper() or .lower() methods.</p><br>
 
 <h1>Technologies used</h1>
 <p>Phyton: the application is entirely written in Phyton. <br>
@@ -156,9 +156,9 @@ This function is imported from the random module. <br>
 It is used to select a random element from a list. In my project it is used to make random choices (selecting a random pet type or friend name during the walk).<br>
 - sleep: <br>
 Imported from the time module. <br>
-It introduces a delay (in seconds) in the execution of a programme. In my project it is used to create pauses in the game to give the appearance of the dog performing actions over time and to slow down the narration to give the user to follow the game easily.<br>
+It introduces a delay (in seconds) in the execution of a programme. In my project it is used to create pauses in the game to give the appearance of the dog performing actions over time and to slow down the narration to allow the user to follow the game easily.<br>
 - sys: <br>
-Sys is used to manipulate a standard output, allowing to create a typing effect by printing characters one at a time. This again is to slow down the narration to give the user to follow the game easily. <br>
+Sys is used to manipulate a standard output, allowing to create a typing effect by printing characters one at a time. This, again, is to slow down the narration to allow the user to follow the game easily. <br>
 - time: <br>
 The entire time module was imported. <br>
 It provides various time-related functions. In my project it is used in conjunction with sleep to control the typing effect.<br></p><br>
@@ -166,11 +166,11 @@ It provides various time-related functions. In my project it is used in conjunct
 <h1>Bugs and Errors </h1>
 <p>- Background not showing when the app is deployed: <br>
 <br>
-I fixed this bug moving the CSS styiling inside the index.html file (between style tags) instead of having a separated stylesheet. The background pictures cannot be saved only locally, but needs to be stored online. Trying to save a picture for the backroung of the terminal in an asset folder will result in an error (file not found).<br>
+I fixed this bug by moving the CSS styling inside the index.html file (between style tags) instead of having a separated stylesheet. The background pictures cannot be saved only locally, but they need to be stored online. Trying to save a picture for the backroung of the terminal in an asset folder will result in an error (file not found).<br>
 <br>
 - The dog learns the command after the 3rd time it is repeated, but the command was actually learnt after the 4th time: <br>
 <br>
-The 3rd time the command was input by the user, the function was not increasing the integer before checking the count. By fixing this issue the bug was also fixed. <br>
+The 3rd time the command was input by the user, the function was not increasing the integer before checking the count. By fixing this issue the bug was fixed. <br>
 <br>
 - The dog needs to learn a command even if the command is written in a different way (e.g. "sit" and "Sit"): <br><br>
 To eliminate case sensitivity I added the .lower() method to the input. 
@@ -183,23 +183,23 @@ I have replaced the element "choice" of the loop with the word "select" to avoid
 
 <h1>Deployment</h1>
 <h2>Version Control</h2>
-<p>The website was created in VSCode and pushed to github to the repository "DoggoPal". <br>
+<p>The website was created in VSCode and pushed to Github to the repository "DoggoPal". <br>
 - git add: preliminary step before committing new elements. <br>
 - git commit -m "": commit changes to the repository.<br>
 - git push: push the committed code to the GitHub repository. <br></p>
 <h2>Deploy to Heroku</h2>
-<p>The project was deployed to the cloud platform Heroku<br></p>
+<p>The project was deployed to the cloud platform Heroku. The deployed project can be found at this link: https://doggo-pal-e8d0b36cfc14.herokuapp.com/ <br></p>
 <p>Deployment steps:<br>
-- In order for the project to run on Heroku, we  need Heroku to install the dependencies we used in the project. The list of dependencies will go in our requirements.txt file here. To create our list of requirements, we  use the following command in the terminal 'Pip3 freeze > requirements.txt'. In my project the requirements.txt file is empty because no dependencies were installed. This in the beginning was giving issue with the deployment (bug explained at the end of the section). Commit and push the changes to githhub.<br>
+- In order for the project to run on Heroku, we  need Heroku to install the dependencies we used in the project. The list of dependencies will go in our requirements.txt file here. To create our list of requirements, we  use the following command in the terminal 'Pip3 freeze > requirements.txt'. In my project the requirements.txt file is empty because no dependencies were installed. This in the beginning was giving issues with the deployment (bug explained at the end of the section). Commit and push the changes to Githhub.<br>
 - Set up an Heroku account<br>
 - On the dashboard, click "Create new app"<br>
-- Name the App with a unique name ans select your region (EU/USA) and click "create app"<br>
--  It's important to get the settings section done before you deploying the code, click the settings tab on the top-left.<br>
--  Config Var section: if applicable (not the case of this project) add elements from .gitignore. To add as an additional config var: the key is PORT and the value is 8000. If you do not add this, thedeployment may fail. Click "Add".<br>
-- Add buildpacks to the application: install more dependencies. Click "Add buildpack" and add Python, select that and then click “Save changes”. The second buildpack is called node.js, select that and click “Save”. Make sure the two buildpacks are in this order (phyton and then node.js).<br>
+- Name the App with a unique name and select your region (EU/USA) and click "create app"<br>
+-  It's important to get the settings section done before deploying the code, click the "Settings" tab on the top-left.<br>
+-  Config Var section: if applicable (not the case of this project) add elements from .gitignore. <br>To add as an additional config var: the key is PORT and the value is 8000. If this is not added, deployment may fail. Click "Add".<br>
+- Add buildpacks to the application: install more dependencies. Click "Add buildpack" and add Python, select it and then click “Save changes”. The second buildpack is called node.js, select it and click “Save”. Make sure the two buildpacks are in this order (phyton and then node.js).<br>
 - Select Deployment method: Github <br>
-- Confirm connceting with Github <br>
-- Search the repository name to connect with Github (in this case "DoggoPal"). Click "Search" and "Connect".
+- Confirm conneting with Github <br>
+- Search the repository name to connect with Github (in this case "DoggoPal"). Click "Search" and "Connect". <br>
 - Enable automatic deploy: this way Heroku will rebuild the app every time a new change is pushed to Github.<br>
 - It is also possible to use the manual deploy. Using the manual deploy is very useful if we want to see immediatly new elements we have just pushed to Github.<br>
 - The site should show “App was successfully deployed” message and a button to view the deployed app. <br>
@@ -215,7 +215,7 @@ https://www.youtube.com/watch?v=7m6O9zqZFZ8 <br>
 Empty and blank string in Phyton: https://www.scaler.com/topics/check-if-string-empty-python/#method3 <br>
 About the sleep function: https://www.freecodecamp.org/news/the-python-sleep-function-how-to-make-python-wait-a-few-seconds-before-continuing-with-example-commands/#:~:text=You%20can%20use%20Python%27s%20sleep,pauses%20between%20words%20or%20graphics. <br>
 Slow typing: https://stackoverflow.com/questions/4099422/printing-slowly-simulate-typing <br>
-How to use Randome choice() method: https://www.w3schools.com/python/ref_random_choice.asp <br> 
+How to use random choice() method: https://www.w3schools.com/python/ref_random_choice.asp <br> 
 Website used to create the flowchart: https://lucid.app <br>
 Text by me and corrected (English mistakes, vocabulary) with DeepL and ChatGPT. <br>
 Pictures from open source website: https://unsplash.com <br>
